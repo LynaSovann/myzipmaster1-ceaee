@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myzipmaster1-ceaee-certificate
+  namespace: myzipmaster1-ceaee
+spec:
+  secretName: myzipmaster1-ceaee-secret-tls
+  commonName: thanak81-myzipmaster1.assessify.org
+  dnsNames:
+  - thanak81-myzipmaster1.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
