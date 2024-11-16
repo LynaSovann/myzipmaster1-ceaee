@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myzipmaster1-ceaee-deployment
+  labels:
+    app: myzipmaster1-ceaee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myzipmaster1-ceaee
+  template:
+    metadata:
+      labels:
+        app: myzipmaster1-ceaee
+    spec:
+      containers:
+        - name: myzipmaster1-ceaee-container
+          image: pipejet/myzipmaster1-ceaee:latest
+          ports:
+            - containerPort: 8080
